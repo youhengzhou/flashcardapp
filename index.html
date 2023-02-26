@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Flash Card App</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <div class="content">
+            <h1>QUESTION</h1>
+            <h2 id="question"></h2>
+            <h1>ANSWER</h1>
+            <h2 id="answer"></h2>
+        </div>
+        <div class="content">
+            <button onclick="rapidQuestion()">rapid fire</button>
+            <button onclick="changeQuestion()">choose question</button>
+            <button onclick="revealAnswer()">reveal answer</button>
+        </div>
+    </body>
+    <script src="./rng.js"></script>
+</html>
