@@ -138,9 +138,9 @@ let w4 = {
 };
 
 let w5 = {
-    centralized: "",
-    distributed: "",
-    decentralized: "",
+    centralized: "server has data",
+    distributed: "client has data",
+    decentralized: "client has local data, server has shared data",
     "fallacies of distributed computing": {
         "the network is reliable": "",
         "latency is zero": "",
@@ -156,19 +156,20 @@ let w5 = {
 };
 
 let w6 = {
-    layered: "",
-    pipeline: "",
-    microkernel: "",
-    mvc: "",
+    layered: "for decomposing system",
+    pipeline: "for passing messages",
+    microkernel: "for core system and addons",
+    mvc: "for interactive views",
 };
 
 let weeks = [w2, w3, w4, w5, w6];
 
 let rapidQuestion = () => {
     let question = weeks[Math.floor(Math.random() * weeks.length)];
-    let keys = Object.keys(question);
+    let subQuestions = Object.keys(question);
 
-    let subQuestion = keys[Math.floor(keys.length * Math.random())];
+    let subQuestion =
+        subQuestions[Math.floor(subQuestions.length * Math.random())];
     let subAnswer = question[subQuestion];
 
     const questionElement = document.getElementById("question");
@@ -183,16 +184,15 @@ let subQuestion = "";
 
 let changeQuestion = () => {
     question = weeks[Math.floor(Math.random() * weeks.length)];
-    let keys = Object.keys(question);
+    let subQuestions = Object.keys(question);
 
-    subQuestion = keys[Math.floor(keys.length * Math.random())];
-    let subAnswer = question[subQuestion];
+    subQuestion = subQuestions[Math.floor(subQuestions.length * Math.random())];
 
     const questionElement = document.getElementById("question");
     const answerElement = document.getElementById("answer");
 
     questionElement.innerHTML = subQuestion;
-    answerElement.innerHTML = "";
+    answerElement.innerHTML = "BLANK";
 };
 
 let revealAnswer = () => {
